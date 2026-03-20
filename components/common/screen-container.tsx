@@ -1,8 +1,8 @@
+import { LinearGradient } from "expo-linear-gradient";
+import { StatusBar } from "expo-status-bar";
 import { PropsWithChildren } from "react";
 import { StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { LinearGradient } from "expo-linear-gradient";
-import { StatusBar } from "expo-status-bar";
 
 import { COLORS, GRADIENTS } from "@/constants/colors";
 
@@ -11,7 +11,11 @@ type Props = PropsWithChildren<{
   variant?: "dark" | "light";
 }>;
 
-export function ScreenContainer({ children, padded = true, variant = "dark" }: Props) {
+export function ScreenContainer({
+  children,
+  padded = true,
+  variant = "dark",
+}: Props) {
   const isLight = variant === "light";
 
   return (
@@ -21,14 +25,18 @@ export function ScreenContainer({ children, padded = true, variant = "dark" }: P
           <StatusBar style="dark" />
           <View style={styles.lightBlobTop} />
           <View style={styles.lightBlobBottom} />
-          <SafeAreaView style={[styles.safeArea, padded && styles.padded]}>{children}</SafeAreaView>
+          <SafeAreaView style={[styles.safeArea, padded && styles.padded]}>
+            {children}
+          </SafeAreaView>
         </View>
       ) : (
         <LinearGradient colors={[...GRADIENTS.screen]} style={styles.container}>
           <StatusBar style="light" />
           <View style={styles.darkOrbTop} />
           <View style={styles.darkOrbBottom} />
-          <SafeAreaView style={[styles.safeArea, padded && styles.padded]}>{children}</SafeAreaView>
+          <SafeAreaView style={[styles.safeArea, padded && styles.padded]}>
+            {children}
+          </SafeAreaView>
         </LinearGradient>
       )}
     </View>

@@ -10,7 +10,12 @@ type Props = {
   tone?: "dark" | "light";
 };
 
-export function AppCheckbox({ checked, label, onPress, tone = "dark" }: Props) {
+export function AppCheckbox({
+  checked,
+  label,
+  onPress,
+  tone = "dark",
+}: Readonly<Props>) {
   const isLight = tone === "light";
 
   return (

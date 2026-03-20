@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useMemo, useState } from "react";
-import { Text, View } from "react-native";
+import { Image, Text, View } from "react-native";
 
 import { AuthFormShell } from "@/components/auth/auth-form-shell";
 import { AppButton } from "@/components/common/app-button";
@@ -9,6 +9,16 @@ import { AppInput } from "@/components/common/app-input";
 import { COLORS } from "@/constants/colors";
 import { AUTH_COPY } from "@/features/auth/data/copy";
 import { authStyles } from "@/features/auth/styles/auth.styles";
+
+function AuthDivider() {
+  return (
+    <View style={authStyles.orRow}>
+      <View style={authStyles.orLine} />
+      <Text style={authStyles.orText}>Or</Text>
+      <View style={authStyles.orLine} />
+    </View>
+  );
+}
 
 export default function RegisterScreen() {
   const [fullName, setFullName] = useState("");
@@ -37,19 +47,16 @@ export default function RegisterScreen() {
 
   return (
     <AuthFormShell
-      title={AUTH_COPY.registerTitle}
-      description={AUTH_COPY.registerDescription}
-      footer={
-        <Text style={authStyles.footerText}>
-          Sudah punya akun?{" "}
-          <Text
-            style={authStyles.footerLink}
-            onPress={() => router.replace("/login")}
-          >
-            Sign In
-          </Text>
-        </Text>
+      showBackButton
+      onBackPress={() => router.replace("/login")}
+      logo={
+        <Image
+          source={require("@/assets/images/logo-text-dark.png")}
+          style={authStyles.authLogoText}
+          resizeMode="contain"
+        />
       }
+      title={AUTH_COPY.registerTitle}
     >
       <View style={authStyles.form}>
         <AppInput
@@ -129,6 +136,15 @@ export default function RegisterScreen() {
         />
 
         <AppButton label="Sign Up" variant="primary" onPress={handleRegister} />
+
+        <AuthDivider />
+
+        <AppButton
+          label="Sign up with Google"
+          variant="ghost"
+          onPress={() => {}}
+          icon={<Ionicons name="logo-google" size={18} color={COLORS.white} />}
+        />
       </View>
     </AuthFormShell>
   );

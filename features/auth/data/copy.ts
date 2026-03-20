@@ -26,11 +26,11 @@ export const AUTH_COPY = {
   introDescription:
     "Kelola akses, transaksi, dan pengalaman pengguna dengan tampilan yang lebih premium, bersih, dan scalable.",
 
-  loginTitle: "Login",
+  loginTitle: "Welcome Back!",
   loginDescription:
     "Masuk untuk lanjut ke akunmu dan akses dashboard finansial dengan pengalaman yang aman dan nyaman.",
 
-  registerTitle: "Sign up",
+  registerTitle: "Create an account",
   registerDescription:
     "Buat akun baru untuk mulai menggunakan PundiGo dan nikmati alur finansial yang lebih rapi dan efisien.",
 };

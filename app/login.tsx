@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
 import { useMemo, useState } from "react";
-import { Pressable, Text, View } from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
 
 import { AuthFormShell } from "@/components/auth/auth-form-shell";
 import { AppButton } from "@/components/common/app-button";
@@ -10,6 +10,16 @@ import { AppInput } from "@/components/common/app-input";
 import { COLORS } from "@/constants/colors";
 import { AUTH_COPY } from "@/features/auth/data/copy";
 import { authStyles } from "@/features/auth/styles/auth.styles";
+
+function AuthDivider() {
+  return (
+    <View style={authStyles.orRow}>
+      <View style={authStyles.orLine} />
+      <Text style={authStyles.orText}>Or</Text>
+      <View style={authStyles.orLine} />
+    </View>
+  );
+}
 
 export default function LoginScreen() {
   const [username, setUsername] = useState("");
@@ -33,8 +43,14 @@ export default function LoginScreen() {
 
   return (
     <AuthFormShell
+      logo={
+        <Image
+          source={require("@/assets/images/logo-text-dark.png")}
+          style={authStyles.authLogoText}
+          resizeMode="contain"
+        />
+      }
       title={AUTH_COPY.loginTitle}
-      description={AUTH_COPY.loginDescription}
       footer={
         <Text style={authStyles.footerText}>
           Belum punya akun?{" "}
@@ -96,14 +112,16 @@ export default function LoginScreen() {
             onPress={() => setRememberMe((prev) => !prev)}
           />
           <Pressable>
-            <Text style={authStyles.linkText}>Forgot login?</Text>
+            <Text style={authStyles.linkText}>Forgot Password?</Text>
           </Pressable>
         </View>
 
         <AppButton label="Sign In" variant="primary" onPress={handleLogin} />
 
+        <AuthDivider />
+
         <AppButton
-          label="Login with Google"
+          label="Sign in with Google"
           variant="ghost"
           onPress={() => {}}
           icon={<Ionicons name="logo-google" size={18} color={COLORS.white} />}

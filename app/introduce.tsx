@@ -8,7 +8,6 @@ import {
   FlatList,
   NativeScrollEvent,
   NativeSyntheticEvent,
-  Text,
   useWindowDimensions,
   View,
 } from "react-native";
@@ -20,7 +19,7 @@ export default function IntroduceScreen() {
   const listRef = useRef<FlatList<Slide>>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const cardWidth = width - 70;
+  const cardWidth = width - 40;
   const isLast = activeIndex === AUTH_COPY.introSlides.length - 1;
 
   const handleMomentumEnd = (
@@ -47,16 +46,6 @@ export default function IntroduceScreen() {
   return (
     <ScreenContainer>
       <View style={authStyles.introContainer}>
-        <View style={authStyles.introTopBar}>
-          <Text style={authStyles.introBrandText}>{AUTH_COPY.brandName}</Text>
-          <Text
-            style={authStyles.introSkip}
-            onPress={() => router.replace("/(tabs)")}
-          >
-            Skip
-          </Text>
-        </View>
-
         <View style={authStyles.introCarouselWrap}>
           <FlatList
             ref={listRef}
@@ -71,9 +60,7 @@ export default function IntroduceScreen() {
             contentContainerStyle={authStyles.introCardListContent}
             onMomentumScrollEnd={handleMomentumEnd}
             renderItem={({ item, index }) => (
-              <View
-                style={[authStyles.introCardItemWrap, { width: cardWidth }]}
-              >
+              <View style={[{ width: cardWidth }]}>
                 <OnboardingSlideCard
                   item={item}
                   isActive={index === activeIndex}

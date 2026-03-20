@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 
 export const authStyles = StyleSheet.create({
   form: {
-    gap: 16,
+    gap: 14,
   },
 
   metaRow: {
@@ -22,50 +22,86 @@ export const authStyles = StyleSheet.create({
   },
 
   footer: {
-    marginTop: 8,
+    marginTop: 12,
     alignItems: "center",
   },
 
   footerText: {
     color: COLORS.textMuted,
-    fontSize: 14,
+    fontSize: 13,
     textAlign: "center",
-    lineHeight: 22,
+    lineHeight: 20,
   },
 
   footerLink: {
-    color: COLORS.text,
+    color: COLORS.white,
     fontWeight: "800",
   },
 
   authRoot: {
     flexGrow: 1,
     justifyContent: "center",
-    paddingHorizontal: 22,
+
     paddingVertical: 28,
+  },
+
+  authContent: {
+    width: "100%",
+    maxWidth: 380,
+    alignSelf: "center",
+  },
+
+  authBackButton: {
+    width: 42,
+    height: 42,
+    borderRadius: 21,
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: 14,
+    backgroundColor: "rgba(255,255,255,0.06)",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.10)",
+    zIndex: 9999999,
+    elevation: 10,
   },
 
   authTopContent: {
     alignItems: "flex-start",
-    justifyContent: "flex-start",
-    marginBottom: 24,
-    paddingHorizontal: 8,
+    marginBottom: 20,
+    gap: 8,
+  },
+
+  brandText: {
+    color: COLORS.white,
+    fontSize: 18,
+    fontWeight: "900",
+    letterSpacing: 0.2,
+    marginBottom: 10,
+  },
+
+  authLogoWrap: {
+    height: 36,
+    justifyContent: "center",
+    alignItems: "flex-start",
+    alignSelf: "flex-start",
+  },
+
+  authHeadingWrap: {
+    gap: 6,
   },
 
   authLogo: {
-    width: 150,
-    height: 44,
-    marginBottom: 18,
+    width: 126,
+    height: 34,
   },
 
   authTitle: {
     color: COLORS.white,
-    fontSize: 30,
-    lineHeight: 36,
+    fontSize: 24,
+    lineHeight: 30,
     fontWeight: "800",
     textAlign: "left",
-    marginBottom: 8,
-    marginTop: 100,
+    marginHorizontal: 10,
   },
 
   authSubtitle: {
@@ -73,22 +109,44 @@ export const authStyles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 22,
     textAlign: "left",
-    maxWidth: 300,
+    maxWidth: "100%",
   },
 
   authCardWrap: {
     width: "100%",
-    alignItems: "center",
-    justifyContent: "center",
+    alignSelf: "center",
   },
 
   authCard: {
     width: "100%",
     maxWidth: 420,
-    borderRadius: 22,
+    borderRadius: 24,
     borderWidth: 1,
     borderColor: "rgba(255,255,255,0.10)",
-    backgroundColor: "rgba(8, 14, 30, 0.26)",
+    backgroundColor: "rgba(8, 14, 30, 0.28)",
+    paddingHorizontal: 16,
+    paddingVertical: 18,
+    ...SHADOWS.soft,
+  },
+
+  orRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 12,
+    marginVertical: 2,
+  },
+
+  orLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: "rgba(255,255,255,0.14)",
+  },
+
+  orText: {
+    color: COLORS.textMuted,
+    fontSize: 12,
+    fontWeight: "600",
   },
 
   authDecorTopLeft: {
@@ -98,23 +156,23 @@ export const authStyles = StyleSheet.create({
     width: 260,
     height: 260,
     borderRadius: 999,
-    backgroundColor: "rgba(51, 102, 255, 0.16)",
+    backgroundColor: "rgba(51, 102, 255, 0.14)",
   },
 
   authDecorTopRight: {
     position: "absolute",
-    top: -60,
+    top: -70,
     right: -120,
     width: 320,
     height: 320,
     borderRadius: 999,
-    backgroundColor: "rgba(123, 160, 255, 0.12)",
+    backgroundColor: "rgba(123, 160, 255, 0.10)",
   },
 
   authGlowBottomLeft: {
     position: "absolute",
-    bottom: -120,
-    left: -100,
+    bottom: -130,
+    left: -120,
     width: 260,
     height: 260,
     borderRadius: 999,
@@ -123,12 +181,12 @@ export const authStyles = StyleSheet.create({
 
   authGlowCenterRight: {
     position: "absolute",
-    top: "40%",
-    right: -80,
+    top: "42%",
+    right: -90,
     width: 220,
     height: 220,
     borderRadius: 999,
-    backgroundColor: "rgba(52, 112, 255, 0.10)",
+    backgroundColor: "rgba(52, 112, 255, 0.08)",
   },
 
   authHeader: {
@@ -136,11 +194,14 @@ export const authStyles = StyleSheet.create({
     gap: 8,
     marginBottom: 22,
   },
+  authLogoText: {
+    width: 165,
+    marginHorizontal: 10,
+  },
 
   introContainer: {
     flex: 1,
     justifyContent: "space-between",
-    paddingVertical: SPACING.lg,
   },
 
   introTopBar: {
@@ -172,12 +233,9 @@ export const authStyles = StyleSheet.create({
     paddingVertical: 8,
   },
 
-  introCardItemWrap: {
-    paddingRight: 18,
-  },
-
   introCard: {
-    minHeight: 560,
+    minHeight: 750,
+    width: "100%",
     borderRadius: 34,
     padding: 22,
     justifyContent: "space-between",
@@ -187,7 +245,8 @@ export const authStyles = StyleSheet.create({
   },
 
   introCardVisualWrap: {
-    height: 280,
+    height: 300,
+    width: 300,
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
@@ -203,8 +262,8 @@ export const authStyles = StyleSheet.create({
   },
 
   introImageFrame: {
-    width: 220,
-    height: 220,
+    width: 260,
+    height: 260,
     borderRadius: 28,
     alignItems: "center",
     justifyContent: "center",
@@ -215,14 +274,13 @@ export const authStyles = StyleSheet.create({
   },
 
   introImage: {
-    width: 160,
-    height: 160,
-    transform: [{ rotate: "8deg" }],
+    width: 300,
+    height: 300,
   },
 
   introCopyWrap: {
-    gap: 12,
-    marginTop: 8,
+    gap: 0,
+    marginTop: 100,
   },
 
   introCardTitle: {

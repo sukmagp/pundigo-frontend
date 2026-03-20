@@ -43,7 +43,6 @@ export function OnboardingSlideCard({ item, isActive, onNext, isLast }: Props) {
 
       <View style={authStyles.introCopyWrap}>
         <Text style={authStyles.introCardTitle}>{item.title}</Text>
-        <Text style={authStyles.introCardDescription}>{item.description}</Text>
       </View>
 
       <View style={authStyles.introCardFooter}>
