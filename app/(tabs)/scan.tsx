@@ -1,12 +1,12 @@
 import { COLORS } from "@/constants/colors";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function ProfileScreen() {
+export default function ScanScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Profil</Text>
+      <Text style={styles.title}>Scan Bukti / Struk</Text>
       <Text style={styles.desc}>
-        Nanti isi pengaturan akun, template, dan preferensi aplikasi.
+        Nanti halaman ini untuk OCR scan struk dan bukti transfer.
       </Text>
     </View>
   );

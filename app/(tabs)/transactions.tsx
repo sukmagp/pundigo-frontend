@@ -1,12 +1,12 @@
 import { COLORS } from "@/constants/colors";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function ProfileScreen() {
+export default function TransactionsScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Profil</Text>
+      <Text style={styles.title}>Riwayat Transaksi</Text>
       <Text style={styles.desc}>
-        Nanti isi pengaturan akun, template, dan preferensi aplikasi.
+        Halaman list transaksi, filter harian/mingguan/bulanan.
       </Text>
     </View>
   );

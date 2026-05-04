@@ -1,12 +1,12 @@
 import { COLORS } from "@/constants/colors";
 import { StyleSheet, Text, View } from "react-native";
 
-export default function ProfileScreen() {
+export default function BudgetScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Profil</Text>
+      <Text style={styles.title}>Budget Bulanan</Text>
       <Text style={styles.desc}>
-        Nanti isi pengaturan akun, template, dan preferensi aplikasi.
+        Nanti isi kategori budget dan progress penggunaan dana.
       </Text>
     </View>
   );
